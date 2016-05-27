@@ -67,6 +67,8 @@ Response is sent to the callback set on the javascript object. Parameters of the
 
 **payment_reference:** KongaPay Transaction reference to be used to identify the payment. String (Maximum of 32 characters)
 
+**transaction_reference:** merchant referenct sent during payment.
+
 **comment:** Is returned when there is an error. Short description of why an error occurred. String.
 
 ### How to Implement KongaPay Link Account Web Plugin. (PART 2)
