@@ -14,8 +14,8 @@ On the page where the Merchant wants to receive payment the link to the Javascri
 
 Sample: 
 
-`<script src="https://sandbox.kongapay.com/plugins/web-plugin/js/kpay-sand.min.js
-"></script>`
+Test Environment: `<script src="https://sandbox.kongapay.com/plugins/web-plugin/js/kpay-sand.min.js"></script>`
+Production Environment: `<script src="https://www.kongapay.com/plugins/web-plugin/js/kpay.min.js"></script>`
 
 ##### 2. Create Javascript Object
 Javascript object is to built for the transaction. 
@@ -25,13 +25,13 @@ Sample Script:
 ```
 <script>
     new KongaPay({
-merchantId: "{merchant_id}",
-merchantName: "{merchant_name}"
-callBack: "{callback_url}",
-amount: "{amount}",
-transactionReference: “{transaction_reference}” ,
-buttonSize: 140,
-description : “{description}”
+    merchantId: "{merchant_id}",
+    merchantName: "{merchant_name}"
+    callBack: "{callback_url}",
+    amount: "{amount}",
+    transactionReference: “{transaction_reference}” ,
+    buttonSize: 140,
+    description : “{description}”
     });
 </script>
 ```
@@ -77,17 +77,18 @@ On the page where the Merchant wants to receive payment the link to the Javascri
 
 Sample: 
 
-`<script src="https://sandbox.kongapay.com/plugins/web-plugin/js/kpayLink.min.js"></script>`
+Test Environment: `<script src="https://sandbox.kongapay.com/plugins/web-plugin/js/kpay-link-sand.min.js"></script>`
+Production Environment: `<script src="https://www.kongapay.com/plugins/web-plugin/js/kpay-link.min.js"></script>`
 ```
 Create Javascript Object
 Javascript object is to built for the transaction. Sample Script:
 <script>
     new KongaPay({
-merchantId: "{merchant_id}",
-merchantName: "{merchant_name}"
-callBack: "{callback_url}",
-buttonSize: 140,
-description : “{description}”
+    merchantId: "{merchant_id}",
+    merchantName: "{merchant_name}"
+    callBack: "{callback_url}",
+    buttonSize: 140,
+    description : “{description}”
     });
 </script>
 ```
