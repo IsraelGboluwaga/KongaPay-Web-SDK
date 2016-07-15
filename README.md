@@ -3,7 +3,7 @@
 The KongaPay Web Plugin is designed for use on the web. This plugin allow merchants to receive payments from a KongaPay user. This plugin will be implemented using HTML and Javascript.
 
 ####Requirements
-1. Merchant must be signed up as a Merchant on KongaPay. If you are yet to sign up, send an email to support@kongapay.com to come onboard.
+1. Merchant must be signed up as a Merchant on KongaPay. If you are yet to sign up, send an email to bizdev@kongapay.com to come onboard.
 2. KongaPay will provide the Merchant with Merchant ID and Client Secret (To be kept secretly by merchant).
 3. Merchant can provide a logo to be displayed alongside Merchant name. The image should be saved using merchant ID as name and should be either .jpg or .png format
 4. Implement web plugin on websites, android SDK on android app and iOS SDK on iOS app.
@@ -25,13 +25,13 @@ Sample Script:
 ```
 <script>
     new KongaPay({
-    merchantId: "{merchant_id}",
-    merchantName: "{merchant_name}"
-    callBack: "{callback_url}",
-    amount: "{amount}",
-    transactionReference: “{transaction_reference}” ,
-    buttonSize: 140,
-    description : “{description}”
+        merchantId: "{merchant_id}",
+        merchantName: "{merchant_name}"
+        callBack: "{callback_url}",
+        amount: "{amount}",
+        transactionReference: “{transaction_reference}” ,
+        buttonSize: 140,
+        description : “{description}”
     });
 </script>
 ```
@@ -65,30 +65,33 @@ Response is sent to the callback set on the javascript object. Parameters of the
 ###### Expected parameters from the response:
 **status :** Status of the transaction. Expected ‘success’ or ‘error’.
 
-**payment_reference:** KongaPay Transaction reference to be used to identify the payment. String (Maximum of 32 characters)
+**payment_reference:** KongaPay Payment reference to be used to identify the payment. String (Maximum of 32 characters)
 
-**transaction_reference:** merchant referenct sent during payment.
+**transaction_reference:** Unique transaction reference supplied by the merchant during payment.
 
 **comment:** Is returned when there is an error. Short description of why an error occurred. String.
 
 ### How to Implement KongaPay Link Account Web Plugin. (PART 2)
 ##### 1. Add Javascript Link to the page
-On the page where the Merchant wants to receive payment the link to the Javascript file is to be added on the page. It is preferable to have it close to the javascript object.
+On the page where the Merchant wants the customer to link his/her KongaPay Account a Javascript file is to be added on the page. It is preferable to have it close to the javascript object.
 
 Sample: 
 
 Test Environment: `<script src="https://sandbox.kongapay.com/plugins/web-plugin/js/kpay-link-sand.min.js"></script>`
 Production Environment: `<script src="https://www.kongapay.com/plugins/web-plugin/js/kpay-link.min.js"></script>`
-```
+
 Create Javascript Object
-Javascript object is to built for the transaction. Sample Script:
+Javascript object is to built for the transaction. 
+
+Sample Script:
+```
 <script>
     new KongaPay({
-    merchantId: "{merchant_id}",
-    merchantName: "{merchant_name}"
-    callBack: "{callback_url}",
-    buttonSize: 140,
-    description : “{description}”
+        merchantId: "{merchant_id}",
+        merchantName: "{merchant_name}"
+        callBack: "{callback_url}",
+        buttonSize: 140,
+        description : “{description}”
     });
 </script>
 ```
@@ -298,17 +301,17 @@ This allow Merchants to requery a KongaPay transaction using the payment_referen
 
 **Sandbox Environment** - https://api-sandbox.kongapay.com/v3
 
-**Live Environment** - https://api.kongapay.com
+**Live Environment** - https://api.kongapay.com/v3
 
 **Definition of parameters:**
 
 - **merchant_id** - Merchant Id provided by KongaPay. String (Maximum of 15).
 - **access_token** - Access Token is required to make any request to KongaPay. It expires after 6 hours. String (Maximum of 128 characters).
-- **payment_reference** - Unique payment reference to be provided by the Merchant. String (Maximum of 32 characters).
+- **transaction_reference** - Unique transaction reference to be provided by the Merchant. String (Maximum of 32 characters).
 - **amount** - Amount to be debited in Naira.Kobo. Example 2005.45 will be read as Two Thousand Naira Forty Five Kobo. String (Maximum of 10 characters).
 - **currency_code** - The Currency code of the transaction. Only Naira (566) accepted for now. String (Maximum of 3 characters).
 - **status** - Status of the transaction. Expected “success” or “error”.
-- **transaction_reference** - Transaction Reference supplied by KongaPay after a successful transaction. String (Maximum of 20 characters).
+- **payment_reference** - Payment Reference supplied by KongaPay after a successful transaction. String (Maximum of 20 characters).
 - **response_code** - Check Response Codes and Description below.
 - **error_message** - Error message sent back from KongaPay when an error occurs. String (Maximum of 1000 characters).
 - **error_code** - Error code sent back from KongaPay when an error occurs. String (Maximum of 5 characters).
@@ -317,7 +320,7 @@ Access Token (access_token) from Part 3 above is required to requery Transaction
 
 **Endpoint:**
 
-`{{kongapay_base_url}}/payments/wallet/merchant/{merchant_id}/payment/{payment_reference}?access_token={access_token}`
+`{{kongapay_base_url}}/payments/wallet/merchant/{merchant_id}/payment/{transaction_reference}?access_token={access_token}`
 
 **Request:**
 
