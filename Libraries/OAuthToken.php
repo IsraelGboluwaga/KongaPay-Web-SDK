@@ -27,7 +27,7 @@ class OAuthToken
     public $result;
     public $error;
 
-    protected $oauth_merchant_id;
+    protected $merchant_id;
     protected $oauth_access_token;
     protected $refresh_token;
     protected $is_test;
@@ -38,16 +38,16 @@ class OAuthToken
 
     /**
      * KongaPayOAuth constructor.
-     * @param $oauth_merchant_id
+     * @param $merchant_id
      * @param $oauth_client_secret
      * @param $is_test
      */
-    public function __construct($oauth_merchant_id, $oauth_client_secret, $is_test = true)
+    public function __construct($merchant_id, $oauth_client_secret, $is_test = true)
     {
         $this->version = '1.0.0';
         $this->is_test = $is_test;
         $this->oauth_url = $is_test ? 'https://staging-auth.kongapay.com' : 'https://auth.kongapay.com';
-        $this->oauth_merchant_id = trim($oauth_merchant_id);
+        $this->oauth_merchant_id = trim($merchant_id);
         $this->oauth_client_secret = trim($oauth_client_secret);
         $this->oauth_access_token = FALSE;
         $this->refresh_token = FALSE;
