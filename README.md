@@ -26,7 +26,8 @@ Sample Script:
 <script>
     new KongaPay({
         merchantId: "{merchant_id}",
-        merchantName: "{merchant_name}"
+        merchantName: "{merchant_name}",
+        phone:"{customer_phone}", //optional
         callBack: "{callback_url}",
         amount: "{amount}",
         transactionReference: “{transaction_reference}” ,
