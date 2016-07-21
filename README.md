@@ -32,7 +32,7 @@ Sample Script:
         amount: "{amount}",
         transactionReference: “{transaction_reference}” ,
         buttonSize: 140,
-        description : “{description}”
+        description : “{description}” //optional
     });
 </script>
 ```
