@@ -88,7 +88,8 @@ Sample Script:
 <script>
     new KongaPay({
         merchantId: "{merchant_id}",
-        merchantName: "{merchant_name}"
+        merchantName: "{merchant_name}",
+        phone:"{customer_phone}" //optional
         callBack: "{callback_url}",
         buttonSize: 140,
         description : “{description}”
