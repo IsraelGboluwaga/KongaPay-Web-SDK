@@ -48,6 +48,7 @@ class OAuthToken
         $this->is_test = $is_test;
         $this->oauth_url = $is_test ? 'https://staging-auth.kongapay.com' : 'https://auth.kongapay.com';
         $this->oauth_merchant_id = trim($merchant_id);
+        $this->merchant_id = trim($merchant_id);
         $this->oauth_client_secret = trim($oauth_client_secret);
         $this->oauth_access_token = FALSE;
         $this->refresh_token = FALSE;
