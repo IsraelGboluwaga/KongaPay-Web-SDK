@@ -79,7 +79,7 @@ On the page where the Merchant wants the customer to link his/her KongaPay Accou
 Sample: 
 
 Test Environment: `<script src="https://sandbox.kongapay.com/plugins/web-plugin/js/kpay-link-sand.min.js"></script>`
-Production Environment: `<script src="https://www.kongapay.com/plugins/web-plugin/js/kpay-link.min.js"></script>`
+Production Environment: `<script src="https://www.kongapay.com/plugins/web-plugin/js/kpayLink.min.js"></script>`
 
 Create Javascript Object
 Javascript object is to built for the transaction. 
