@@ -293,7 +293,7 @@ Error response:
 }
 ```
 
-Requerying KongaPay Payments (PART 5)
+####Requerying KongaPay Payments (PART 5)
 
 Merchants can always requery transactions made using KongaPay. This part of the documentation will help with how this can be achieved.
 
