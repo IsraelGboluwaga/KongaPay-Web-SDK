@@ -87,7 +87,7 @@ Javascript object is to built for the transaction.
 Sample Script:
 ```
 <script>
-    new KongaPay({
+    new KongaPayLink({
         merchantId: "{merchant_id}",
         merchantName: "{merchant_name}",
         phone:"{customer_phone}" //optional
