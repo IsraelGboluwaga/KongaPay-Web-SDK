@@ -1,0 +1,10 @@
+{
+    "name": "kongapay/konga-pay-web-sdk",
+    "description": "The KongaPay Web Plugin is designed for use on the web. This plugin allow merchants to receive payments from a KongaPay user. This plugin will be implemented using HTML and Javascript.",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "KongaPay\\" : "Libraries"
+        }
+    }
+}
