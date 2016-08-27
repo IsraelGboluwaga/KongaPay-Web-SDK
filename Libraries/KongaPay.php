@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Class KongaPay
- *
- * @author: Jacob Ayokunle <jacob.ayokunle@konga.com>
- */
-
 require 'OAuthToken.php';
 
 class KongaPay extends OAuthToken
