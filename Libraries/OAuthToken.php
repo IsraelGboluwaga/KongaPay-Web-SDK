@@ -27,7 +27,7 @@ class OAuthToken
     protected $refresh_token;
     protected $is_test;
 
-    private $version;
+    private $version = '1.0.0';
     private $oauth_url;
     private $oauth_client_secret;
 
@@ -39,7 +39,6 @@ class OAuthToken
      */
     public function __construct($merchant_id, $oauth_client_secret, $is_test = true)
     {
-        $this->version = '1.0.0';
         $this->is_test = $is_test;
         $this->oauth_url = $is_test ? 'https://staging-auth.kongapay.com' : 'https://auth.kongapay.com';
         $this->oauth_merchant_id = trim($merchant_id);
