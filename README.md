@@ -25,7 +25,7 @@ Sample Script:
 ```
 <script>
     new KongaPay({
-        id: "{button_container_id}" //option
+        id: "{button_container_id}" //optional defaults to {kpay-pay-component}
         merchantId: "{merchant_id}",
         merchantName: "{merchant_name}",
         phone:"{customer_phone}", //optional
@@ -56,7 +56,7 @@ Sample Script:
 **description:** A short description of the transaction. Optional. String (Maximum of 30 characters)
 
 ##### 3. Add Kongapay Payment Div
-Add `<div id="kpay-pay-component"></div>` where you want KongaPay button to appear. This will add a ‘Pay With KongaPay button as seen in this image http://take.ms/246jD.
+Add `<div id="button_container_id"></div>` where you want KongaPay button to appear. This will add a ‘Pay With KongaPay button as seen in this image http://take.ms/246jD.
 
 ##### 4. User login
 When a user clicks on the Pay with KongaPay button a popup is displayed where the customer enters his/her phone number linked to KongaPay. http://take.ms/yBLDD. The user will enter his phone number and click on login.
@@ -91,6 +91,7 @@ Sample Script:
 ```
 <script>
     new KongaPayLink({
+        id: "{button_container_id}" //optional defaults to {kpay-pay-component}
         merchantId: "{merchant_id}",
         merchantName: "{merchant_name}",
         phone:"{customer_phone}" //optional
@@ -104,6 +105,8 @@ Sample Script:
 ######OPTIONS Definition:
 **buttonSize :** specifies the size, in pixels, of the KongPay button you’ll want to appear on your site. It defaults to 140px if not provided. Integer (optional).
 
+**id:** id of container to show the KongaPay button (can be used if you want to create multiple buttons on one page)
+
 **merchantId:** Your KongaPay merchant_id provided by KongaPay. String (Maximum of 15 characters)
 
 **merchantName:** Your Company Name as you want it to appear on the Popup. String (Maximum of 20 characters).
@@ -113,7 +116,7 @@ Sample Script:
 **description:** A short description of the transaction. String (Maximum of 30 characters)
 
 ##### 3. Add Kongapay Payment Div
-Add `<div id="kpay-link-component"></div>` where you want KongaPay button to appear. This will add an “Authorize KongaPay” button as seen in this image. http://take.ms/cf81C.
+Add `<div id="button_container_id"></div>` where you want KongaPay button to appear. This will add an “Authorize KongaPay” button as seen in this image. http://take.ms/cf81C.
 
 ##### 4. User login
 When a user clicks on the Authorize KongaPay button a popup is displayed where the customer enters his/her phone number linked to KongaPay. http://take.ms/L3OmO. The user will enter his phone number and click on login.
