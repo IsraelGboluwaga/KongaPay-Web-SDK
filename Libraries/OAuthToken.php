@@ -1,5 +1,7 @@
 <?php
 
+namespace KongaPay;
+
 if (!function_exists('curl_init')) {
     throw new \Exception('The KongaPay KPayAPI class is unable to find the CURL PHP extension.');
 }

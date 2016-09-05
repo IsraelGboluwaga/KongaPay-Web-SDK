@@ -1,6 +1,8 @@
 <?php
 
-require 'OAuthToken.php';
+namespace KongaPay;
+
+use KongaPay\OAuthToken;
 
 class KongaPay extends OAuthToken
 {
