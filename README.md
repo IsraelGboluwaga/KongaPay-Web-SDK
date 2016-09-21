@@ -104,7 +104,7 @@ Sample Script:
 ######OPTIONS Definition:
 **buttonSize :** specifies the size, in pixels, of the KongPay button you’ll want to appear on your site. It defaults to 140px if not provided. Integer (optional).
 
-**id:** id of container to show the KongaPay button (can be used if you want to create multiple buttons on one page)
+**id:** id of container to show the KongaPay button
 
 **merchantId:** Your KongaPay merchant_id provided by KongaPay. String (Maximum of 15 characters)
 
