@@ -25,7 +25,7 @@ Sample Script:
 ```
 <script>
     new KongaPay({
-        id: "{button_container_id}" //optional defaults to {kpay-pay-component}
+        id: "{button_container_id}" //optional
         merchantId: "{merchant_id}",
         merchantName: "{merchant_name}",
         phone:"{customer_phone}", //optional
@@ -56,7 +56,7 @@ Sample Script:
 **description:** A short description of the transaction. Optional. String (Maximum of 30 characters)
 
 ##### 3. Add Kongapay Payment Div
-Add `<div id="kpay-link-component"></div>` where you want KongaPay button to appear. This will add a ‘Pay With KongaPay button as seen in this image http://take.ms/246jD.
+Add `<div id="button_container_id"></div>` where you want KongaPay button to appear. This will add a ‘Pay With KongaPay button as seen in this image http://take.ms/246jD.
 
 ##### 4. User login
 When a user clicks on the Pay with KongaPay button a popup is displayed where the customer enters his/her phone number linked to KongaPay. http://take.ms/yBLDD. The user will enter his phone number and click on login.
@@ -91,6 +91,7 @@ Sample Script:
 ```
 <script>
     new KongaPayLink({
+        id: "{button_container_id}" //optional 
         merchantId: "{merchant_id}",
         merchantName: "{merchant_name}",
         phone:"{customer_phone}" //optional
