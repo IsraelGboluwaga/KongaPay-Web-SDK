@@ -33,7 +33,8 @@ Sample Script:
         amount: "{amount}",
         transactionReference: “{transaction_reference}” ,
         buttonSize: 140,
-        description : “{description}” //optional
+        description : “{description}”, //optional
+        hash: {hashValue}
     });
 </script>
 ```
@@ -41,7 +42,7 @@ Sample Script:
 #####OPTIONS Definition:
 **buttonSize :** specifies the size, in pixels, of the KongPay button you’ll want to appear on your site. It defaults to 140px if not provided. Integer (optional).
 
-**id:** id of container to show the KongaPay button (can be used if you want to create multiple buttons on one page)
+**id:** id of container to show the KongaPay button (can be used if you want to create multiple buttons on one page). If you are not passing an ID, then your container ID should be "kpay-pay-component".
 
 **merchantId:** Your KongaPay merchant_id provided by KongaPay. String (Maximum of 15 characters)
 
@@ -55,6 +56,8 @@ Sample Script:
 
 **description:** A short description of the transaction. Optional. String (Maximum of 30 characters)
 
+**hash:** hash('SHA512', {amount} .'#'. {transactionReference} .'#'. {merchant_id} .'#'. {secret_key})
+
 ##### 3. Add Kongapay Payment Div
 Add `<div id="button_container_id"></div>` where you want KongaPay button to appear. This will add a ‘Pay With KongaPay button as seen in this image http://take.ms/246jD.
 
@@ -62,7 +65,7 @@ Add `<div id="button_container_id"></div>` where you want KongaPay button to app
 When a user clicks on the Pay with KongaPay button a popup is displayed where the customer enters his/her phone number linked to KongaPay. http://take.ms/yBLDD. The user will enter his phone number and click on login.
 
 ##### 5. User verify
-On successful login the user will be taken to a page where he/she is to enter the One Time Password and KongaPay Pin to authorize payment. http://take.ms/CoBFJ. On click of Pay Amount, transaction will be processed.
+On successful login, the user will be taken to a page where he/she is to enter the One Time Password and KongaPay Pin to authorize payment. http://take.ms/CoBFJ. On click of Pay Amount, transaction will be processed.
  
 ##### 6. Handling Response
 Response is sent to the callback set on the javascript object. Parameters of the response can be fetched using GET. 
@@ -74,6 +77,8 @@ Response is sent to the callback set on the javascript object. Parameters of the
 **transaction_reference:** Unique transaction reference supplied by the merchant during payment.
 
 **comment:** Is returned when there is an error. Short description of why an error occurred. String.
+
+**Important Note!** Before returning a success page to the user, you need to make a requery(as described in part 3) and compare amount paid with amount expected. Only return a success if this is true.
 
 ### How to Implement KongaPay Link Account Web Plugin. (PART 2)
 ##### 1. Add Javascript Link to the page
@@ -357,3 +362,4 @@ K01 - Insufficient funds
 K02 - Transaction not found
 K03 - Fail
 ```
+It is important to do this before returning a success page if the amount paid equals amount expected
