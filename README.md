@@ -1,5 +1,36 @@
 #KongaPay-Web-SDK
 
+
+###Updated
+To ensure a more secure solution we have update KongaPay Web Plugin to include a hash value as part of the payload.
+
+Test Environment: `<script src="https://sandbox.kongapay.com/plugins/web-plugin/js/v2/kpay-sand.min.js"></script>`
+Production Environment: `<script src="https://www.kongapay.com/plugins/web-plugin/js/v2/kpay.min.js"></script>`
+
+Sample Script:
+
+```
+<script>
+    new KongaPay({
+        id: "{button_container_id}" //optional
+        merchantId: "{merchant_id}",
+        merchantName: "{merchant_name}",
+        phone:"{customer_phone}", //optional
+        callBack: "{callback_url}",
+        amount: "{amount}",
+        transactionReference: “{transaction_reference}” ,
+        buttonSize: {button_size}, //default 140
+        description : “{description}”, //optional
+        hash: {hashValue} (NEW)
+    });
+</script>
+```
+
+#####NEW OPTION Definition:
+**hash:** hash_hmac('SHA512', {amount} '#'{transactionReference}'#'{merchant_id}, {secret_key})
+
+
+
 The KongaPay Web Plugin is designed for use on the web. This plugin allow merchants to receive payments from a KongaPay user. This plugin will be implemented using HTML and Javascript.
 
 ####Requirements
@@ -34,7 +65,6 @@ Sample Script:
         transactionReference: “{transaction_reference}” ,
         buttonSize: 140,
         description : “{description}”, //optional
-        hash: {hashValue}
     });
 </script>
 ```
@@ -55,8 +85,6 @@ Sample Script:
 **transactionReference:** Unique transaction reference per transaction. This should always be different for every instance. String (Maximum of 32 characters)
 
 **description:** A short description of the transaction. Optional. String (Maximum of 30 characters)
-
-**hash:** hash('SHA512', {amount} .'#'. {transactionReference} .'#'. {merchant_id} .'#'. {secret_key})
 
 ##### 3. Add Kongapay Payment Div
 Add `<div id="button_container_id"></div>` where you want KongaPay button to appear. This will add a ‘Pay With KongaPay button as seen in this image http://take.ms/246jD.
