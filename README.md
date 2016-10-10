@@ -1,7 +1,8 @@
 #KongaPay-Web-SDK
 
 
-###Updated
+##Updated
+
 To ensure a more secure solution we have update KongaPay Web Plugin to include a hash value as part of the payload.
 
 Test Environment: `<script src="https://sandbox.kongapay.com/plugins/web-plugin/js/v2/kpay-sand.min.js"></script>`
@@ -29,6 +30,8 @@ Sample Script:
 #####NEW OPTION Definition:
 **hash:** hash_hmac('SHA512', {amount} '#'{transactionReference}'#'{merchant_id}, {secret_key})
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 The KongaPay Web Plugin is designed for use on the web. This plugin allow merchants to receive payments from a KongaPay user. This plugin will be implemented using HTML and Javascript.
