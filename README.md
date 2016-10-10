@@ -6,6 +6,7 @@
 To ensure a more secure solution we have update KongaPay Web Plugin to include a hash value as part of the payload.
 
 Test Environment: `<script src="https://sandbox.kongapay.com/plugins/web-plugin/js/v2/kpay-sand.min.js"></script>`
+
 Production Environment: `<script src="https://www.kongapay.com/plugins/web-plugin/js/v2/kpay.min.js"></script>`
 
 Sample Script:
