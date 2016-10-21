@@ -363,9 +363,9 @@ K03 - Fail
 It is important to do this before returning a success page if the amount paid equals amount expected
 
 
-///////////////////////-------- ##UPDATES ------ /////////////////////
+#UPDATES
 
-##Updated
+###October 10, 2016
 
 To ensure a more secure solution we have update KongaPay Web Plugin to include a hash value as part of the payload.
 
