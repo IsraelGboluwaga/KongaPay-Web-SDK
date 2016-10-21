@@ -1,40 +1,6 @@
 #KongaPay-Web-SDK
 
 
-##Updated
-
-To ensure a more secure solution we have update KongaPay Web Plugin to include a hash value as part of the payload.
-
-Test Environment: `<script src="https://sandbox.kongapay.com/plugins/web-plugin/js/v2/kpay-sand.min.js"></script>`
-
-Production Environment: `<script src="https://www.kongapay.com/plugins/web-plugin/js/v2/kpay.min.js"></script>`
-
-Sample Script:
-
-```
-<script>
-    new KongaPay({
-        id: "{button_container_id}" //optional
-        merchantId: "{merchant_id}",
-        merchantName: "{merchant_name}",
-        phone:"{customer_phone}", //optional
-        callBack: "{callback_url}",
-        amount: "{amount}",
-        transactionReference: “{transaction_reference}” ,
-        buttonSize: {button_size}, //default 140
-        description : “{description}”, //optional
-        hash: {hashValue} (NEW)
-    });
-</script>
-```
-
-#####NEW OPTION Definition:
-**hash:** hash_hmac('SHA512', {amount} '#'{transactionReference}'#'{merchant_id}, {secret_key})
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 The KongaPay Web Plugin is designed for use on the web. This plugin allow merchants to receive payments from a KongaPay user. This plugin will be implemented using HTML and Javascript.
 
 ####Requirements
@@ -395,3 +361,36 @@ K02 - Transaction not found
 K03 - Fail
 ```
 It is important to do this before returning a success page if the amount paid equals amount expected
+
+
+///////////////////////-------- ##UPDATES ------ /////////////////////
+
+##Updated
+
+To ensure a more secure solution we have update KongaPay Web Plugin to include a hash value as part of the payload.
+
+Test Environment: `<script src="https://sandbox.kongapay.com/plugins/web-plugin/js/v2/kpay-sand.min.js"></script>`
+
+Production Environment: `<script src="https://www.kongapay.com/plugins/web-plugin/js/v2/kpay.min.js"></script>`
+
+Sample Script:
+
+```
+<script>
+    new KongaPay({
+        id: "{button_container_id}" //optional
+        merchantId: "{merchant_id}",
+        merchantName: "{merchant_name}",
+        phone:"{customer_phone}", //optional
+        callBack: "{callback_url}",
+        amount: "{amount}",
+        transactionReference: “{transaction_reference}” ,
+        buttonSize: {button_size}, //default 140
+        description : “{description}”, //optional
+        hash: {hashValue} (NEW)
+    });
+</script>
+```
+
+#####NEW OPTION Definition:
+**hash:** hash_hmac('SHA512', {amount} '#'{transactionReference}'#'{merchant_id}, {secret_key})
