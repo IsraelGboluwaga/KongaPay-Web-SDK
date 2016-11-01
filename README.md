@@ -393,4 +393,4 @@ Sample Script:
 ```
 
 #####NEW OPTION Definition:
-**hash:** hash_hmac('SHA512', {amount} '#'{transactionReference}'#'{merchant_id}, {secret_key})
+**hash:** `hash_hmac('SHA512', {amount} '#'{transactionReference}'#'{merchant_id}, {secret_key})`
