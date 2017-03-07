@@ -9,6 +9,42 @@ The KongaPay Web Plugin is designed for use on the web. This plugin allow mercha
 3. Merchant can provide a logo to be displayed alongside Merchant name. The image should be saved using merchant ID as name and should be either .jpg or .png format
 4. Implement web plugin on websites, android SDK on android app and iOS SDK on iOS app.
 
+
+#UPDATES
+
+###October 10, 2016
+
+To ensure a more secure solution we have update KongaPay Web Plugin to include a hash value as part of the payload.
+
+Test Environment: `<script src="https://sandbox.kongapay.com/plugins/web-plugin/js/v2/kpay-sand.min.js"></script>`
+
+Production Environment: `<script src="https://www.kongapay.com/plugins/web-plugin/js/v2/kpay.min.js"></script>`
+
+Sample Script:
+
+```
+<script>
+    new KongaPay({
+        id: "{button_container_id}" //optional
+        merchantId: "{merchant_id}",
+        merchantName: "{merchant_name}",
+        phone:"{customer_phone}", //optional
+        callBack: "{callback_url}",
+        amount: "{amount}",
+        transactionReference: “{transaction_reference}” ,
+        buttonSize: {button_size}, //default 140
+        description : “{description}”, //optional
+        hash: {hashValue} (NEW)
+    });
+</script>
+```
+
+#####NEW OPTION Definition:
+**hash:** `hash_hmac('SHA512', {amount} '#'{transactionReference}'#'{merchant_id}, {secret_key})`
+
+
+
+
 ###How to Implement KongaPay Payment Web Plugin. (PART 1)
 ##### 1. Add Javascript Link to the page
 On the page where the Merchant wants to receive payment the link to the Javascript file is to be added on the page. It is preferable to have it close to the javascript object.
@@ -361,36 +397,3 @@ K02 - Transaction not found
 K03 - Fail
 ```
 It is important to do this before returning a success page if the amount paid equals amount expected
-
-
-#UPDATES
-
-###October 10, 2016
-
-To ensure a more secure solution we have update KongaPay Web Plugin to include a hash value as part of the payload.
-
-Test Environment: `<script src="https://sandbox.kongapay.com/plugins/web-plugin/js/v2/kpay-sand.min.js"></script>`
-
-Production Environment: `<script src="https://www.kongapay.com/plugins/web-plugin/js/v2/kpay.min.js"></script>`
-
-Sample Script:
-
-```
-<script>
-    new KongaPay({
-        id: "{button_container_id}" //optional
-        merchantId: "{merchant_id}",
-        merchantName: "{merchant_name}",
-        phone:"{customer_phone}", //optional
-        callBack: "{callback_url}",
-        amount: "{amount}",
-        transactionReference: “{transaction_reference}” ,
-        buttonSize: {button_size}, //default 140
-        description : “{description}”, //optional
-        hash: {hashValue} (NEW)
-    });
-</script>
-```
-
-#####NEW OPTION Definition:
-**hash:** `hash_hmac('SHA512', {amount} '#'{transactionReference}'#'{merchant_id}, {secret_key})`
