@@ -43,7 +43,7 @@ Sample Script:
 **hash:** `hash_hmac('SHA512', {amount} '#'{transactionReference}'#'{merchant_id}, {secret_key})`
 
 
-
+#
 
 ###How to Implement KongaPay Payment Web Plugin. (PART 1)
 ##### 1. Add Javascript Link to the page
