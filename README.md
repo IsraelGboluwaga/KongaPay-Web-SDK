@@ -1,4 +1,4 @@
-#KongaPay-Web-SDK
+###KongaPay-Web-SDK
 
 
 The KongaPay Web Plugin is designed for use on the web. This plugin allow merchants to receive payments from a KongaPay user. This plugin will be implemented using HTML and Javascript.
